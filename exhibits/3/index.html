@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>Пальто и шапка 
+Гавриила Троеполь
+ского.</title>
+  <link rel="stylesheet" href="../../static/style.css?v=11" />
+  <link rel="manifest" href="../../static/manifest.webmanifest?v=4" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__row">
+      <a class="link" href="../../">← Назад</a>
+      <div class="brand__title">Карточка экспоната</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="detail">
+      <div class="detail__top">
+        <div>
+          <div class="detail__id">ID 3</div>
+          <h1 class="detail__title">Пальто и шапка 
+Гавриила Троеполь
+ского.</h1>
+          <div class="detail__museum">&#34;Музей имени
+Гавриила
+Троепольского&#34;</div>
+        </div>
+      </div>
+
+      
+        <img class="photo" src="../../photos/3.png" alt="Пальто и шапка 
+Гавриила Троеполь
+ского." />
+      
+
+      <div class="detail__grid">
+        <div class="field">
+          <div class="field__label">Категория</div>
+          <div class="field__value">Одежда.</div>
+        </div>
+        <div class="field">
+          <div class="field__label">Эпоха/Период</div>
+          <div class="field__value">20 век.</div>
+        </div>
+        <div class="field">
+          <div class="field__label">Дата поступления</div>
+          <div class="field__value">-</div>
+        </div>
+        <div class="field">
+          <div class="field__label">Связь с Воронежем</div>
+          <div class="field__value">Одежда Гавриила Троепольского — значимая часть экспозиции, отражающая его связь с Воронежской землёй. Она помогает воссоздать образ писателя, показать эпоху и передать дух природы, ставший источником вдохновения для его творчества.</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field__label">Описание</div>
+        <div class="field__value field__value--text">Эти вещи 
+носил 
+Гавриил
+Троепольский.
+Одежду
+предоставила
+в музей дочь
+писателя.</div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((regs) => {
+        regs.forEach((reg) => reg.unregister());
+      });
+      caches.keys().then((keys) => {
+        keys.forEach((k) => {
+          if (k.startsWith('museum-exhibits')) {
+            caches.delete(k);
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>
