@@ -30,7 +30,7 @@
 
     <div class="grid">
       {% for e in exhibits %}
-      <a class="card" href="/exhibits/{{ e.exhibit_id }}/" style="--card-delay: {{ loop.index0 * 70 }}ms;">
+      <a class="card" href="./exhibits/{{ e.exhibit_id }}/" style="--card-delay: {{ loop.index0 * 70 }}ms;">
         {% set photo_url = photo_urls.get(e.exhibit_id) %}
         {% if photo_url %}
           <div class="card__photo-wrap">
