@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>Биография писателя.</title>
+  <link rel="stylesheet" href="../../static/style.css?v=11" />
+  <link rel="manifest" href="../../static/manifest.webmanifest?v=4" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__row">
+      <a class="link" href="../../">← Назад</a>
+      <div class="brand__title">Карточка экспоната</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="detail">
+      <div class="detail__top">
+        <div>
+          <div class="detail__id">ID 5</div>
+          <h1 class="detail__title">Биография писателя.</h1>
+          <div class="detail__museum">Музей &#34;Земля
+и небо 
+Вячеслава
+Дегтева&#34;</div>
+        </div>
+      </div>
+
+      
+
+      <div class="detail__grid">
+        <div class="field">
+          <div class="field__label">Категория</div>
+          <div class="field__value">Биография.</div>
+        </div>
+        <div class="field">
+          <div class="field__label">Эпоха/Период</div>
+          <div class="field__value">20-21 век.</div>
+        </div>
+        <div class="field">
+          <div class="field__label">Дата поступления</div>
+          <div class="field__value">-</div>
+        </div>
+        <div class="field">
+          <div class="field__label">Связь с Воронежем</div>
+          <div class="field__value">Имя Вячеслава Дегтёва связано с историей Воронежа и подвигами наших лётчиков-героев. Родившись в городе, он стал знаменитым истребителем и писателем, чьи книги передают дух военного времени. Наш музей сохраняет память о нём, показывая экспонаты, посвящённые его службе и творчеству.</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field__label">Описание</div>
+        <div class="field__value field__value--text">Биография
+Вячеслава
+Дегтева.</div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((regs) => {
+        regs.forEach((reg) => reg.unregister());
+      });
+      caches.keys().then((keys) => {
+        keys.forEach((k) => {
+          if (k.startsWith('museum-exhibits')) {
+            caches.delete(k);
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

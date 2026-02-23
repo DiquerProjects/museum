@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>Фотография Гавриила
+Троепольского.</title>
+  <link rel="stylesheet" href="../../static/style.css?v=11" />
+  <link rel="manifest" href="../../static/manifest.webmanifest?v=4" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__row">
+      <a class="link" href="../../">← Назад</a>
+      <div class="brand__title">Карточка экспоната</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="detail">
+      <div class="detail__top">
+        <div>
+          <div class="detail__id">ID 1</div>
+          <h1 class="detail__title">Фотография Гавриила
+Троепольского.</h1>
+          <div class="detail__museum">&#34;Музей имени
+Гавриила 
+Троепольского&#34;</div>
+        </div>
+      </div>
+
+      
+
+      <div class="detail__grid">
+        <div class="field">
+          <div class="field__label">Категория</div>
+          <div class="field__value">Фотография.</div>
+        </div>
+        <div class="field">
+          <div class="field__label">Эпоха/Период</div>
+          <div class="field__value">20 век.</div>
+        </div>
+        <div class="field">
+          <div class="field__label">Дата поступления</div>
+          <div class="field__value">-</div>
+        </div>
+        <div class="field">
+          <div class="field__label">Связь с Воронежем</div>
+          <div class="field__value">Гавриил Троепольский родился и вырос в селе Новый Курлак Воронежской губернии. Именно там сформировались его взгляды на природу, красоту русской деревни и отношение к животным, ставшие основой творчества писателя. Наиболее известное произведение Троепольского — повесть &#34;Белый Бим Чёрное ухо&#34;, написанная в духе гуманизма и любви к природе. Таким образом, Воронежская земля оставила глубокий след в творчестве автора, вдохновив его на создание произведений, полных душевности и искренности.</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field__label">Описание</div>
+        <div class="field__value field__value--text">Фото 
+Гавриила
+Троепольского с верным другом, которое предоставила дочь писателя.</div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((regs) => {
+        regs.forEach((reg) => reg.unregister());
+      });
+      caches.keys().then((keys) => {
+        keys.forEach((k) => {
+          if (k.startsWith('museum-exhibits')) {
+            caches.delete(k);
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

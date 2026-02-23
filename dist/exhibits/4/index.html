@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>Самолет-Герой.</title>
+  <link rel="stylesheet" href="../../static/style.css?v=11" />
+  <link rel="manifest" href="../../static/manifest.webmanifest?v=4" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__row">
+      <a class="link" href="../../">← Назад</a>
+      <div class="brand__title">Карточка экспоната</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="detail">
+      <div class="detail__top">
+        <div>
+          <div class="detail__id">ID 4</div>
+          <h1 class="detail__title">Самолет-Герой.</h1>
+          <div class="detail__museum">Музей под 
+открытым небом
+&#34;Самолет-
+Герой&#34;</div>
+        </div>
+      </div>
+
+      
+
+      <div class="detail__grid">
+        <div class="field">
+          <div class="field__label">Категория</div>
+          <div class="field__value">Авиостр
+оение.</div>
+        </div>
+        <div class="field">
+          <div class="field__label">Эпоха/Период</div>
+          <div class="field__value">20 век.</div>
+        </div>
+        <div class="field">
+          <div class="field__label">Дата поступления</div>
+          <div class="field__value">-</div>
+        </div>
+        <div class="field">
+          <div class="field__label">Связь с Воронежем</div>
+          <div class="field__value">Алексей Небольсин — советский военный лётчик, Герой Советского Союза, связанный с Воронежем. Он родился в Воронеже и начал свою карьеру в местном аэроклубе. Во время Великой Отечественной войны проявил исключительное мужество и мастерство, совершив десятки боевых вылетов. Имя Алексея Небольсина навсегда вошло в историю Воронежа как символ мужества и патриотизма.</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field__label">Описание</div>
+        <div class="field__value field__value--text">Музей 
+посвящен
+летчику-
+истребителю
+Алексею
+Небольсину, который совершил 23 вылета на самолете И-16 и был награжден орденом Красного Знамени.</div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((regs) => {
+        regs.forEach((reg) => reg.unregister());
+      });
+      caches.keys().then((keys) => {
+        keys.forEach((k) => {
+          if (k.startsWith('museum-exhibits')) {
+            caches.delete(k);
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

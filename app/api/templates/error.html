@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="manifest" href="/static/manifest.webmanifest" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__row">
+      <a class="link" href="/">← Назад</a>
+      <div class="brand__title">Ошибка</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="detail">
+      <div class="detail__id">{{ title }}</div>
+      <div class="field">
+        <div class="field__label">Сообщение</div>
+        <div class="field__value field__value--text">{{ message }}</div>
+      </div>
+      <div class="field">
+        <div class="field__label">Путь к XLSX</div>
+        <div class="field__value">{{ xlsx_path }}</div>
+      </div>
+      <div class="empty">Проверь, что файл существует и содержит нужные колонки.</div>
+    </section>
+  </main>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/static/sw.js');
+    }
+  </script>
+</body>
+</html>

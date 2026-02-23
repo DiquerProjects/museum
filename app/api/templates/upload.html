@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>Загрузка XLSX</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="manifest" href="/static/manifest.webmanifest" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__row">
+      <a class="link" href="/">← Назад</a>
+      <div class="brand__title">Загрузка XLSX</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="detail">
+      <div class="field">
+        <div class="field__label">Текущий путь</div>
+        <div class="field__value">{{ xlsx_path }}</div>
+      </div>
+
+      {% if error %}
+        <div class="empty">{{ error }}</div>
+      {% endif %}
+
+      {% if success %}
+        <div class="empty">{{ success }} Теперь открой главную страницу.</div>
+      {% endif %}
+
+      <form class="filters" method="post" action="/admin/upload" enctype="multipart/form-data">
+        {% if token_required %}
+          <input class="input" type="password" name="token" placeholder="Токен администратора" />
+        {% endif %}
+
+        <input class="input" type="file" name="file" accept=".xlsx" required />
+        <button class="button" type="submit">Загрузить</button>
+      </form>
+
+      <div class="meta" style="margin-top:12px;">
+        Подсказка: если включишь переменную `APP_ADMIN_TOKEN`, без токена загрузка будет запрещена.
+      </div>
+    </section>
+  </main>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/static/sw.js');
+    }
+  </script>
+</body>
+</html>

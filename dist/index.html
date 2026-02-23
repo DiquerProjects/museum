@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>Каталог экспонатов</title>
+  <link rel="stylesheet" href="./static/style.css?v=11" />
+  <link rel="manifest" href="./static/manifest.webmanifest?v=4" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="brand">
+        <div>
+          <div class="brand__title">Каталог экспонатов</div>
+        </div>
+      </div>
+
+      <form class="filters" method="get" action="/">
+        <input class="input" type="search" name="q" placeholder="Поиск (название, музей, описание...)" value="" />
+
+        <button class="button" type="submit">Показать</button>
+      </form>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="meta">Найдено: 7</div>
+
+    <div class="grid">
+      
+      <a class="card" href="/exhibits/1/" style="--card-delay: 0ms;">
+        
+        
+        <div class="card__id">ID 1</div>
+        <div class="card__title">Фотография Гавриила
+Троепольского.</div>
+        <div class="card__line">&#34;Музей имени
+Гавриила 
+Троепольского&#34;</div>
+        <div class="card__badges">
+          <span class="badge">Фотография.</span>
+          <span class="badge badge--muted">20 век.</span>
+        </div>
+      </a>
+      
+      <a class="card" href="/exhibits/2/" style="--card-delay: 70ms;">
+        
+        
+        <div class="card__id">ID 2</div>
+        <div class="card__title">Фигурки Бимов.</div>
+        <div class="card__line">&#34;Музей имени
+Гавриила
+Троепольского&#34;.</div>
+        <div class="card__badges">
+          <span class="badge">Фигурки.</span>
+          <span class="badge badge--muted">20 век.</span>
+        </div>
+      </a>
+      
+      <a class="card" href="/exhibits/3/" style="--card-delay: 140ms;">
+        
+        
+        <div class="card__id">ID 3</div>
+        <div class="card__title">Пальто и шапка 
+Гавриила Троеполь
+ского.</div>
+        <div class="card__line">&#34;Музей имени
+Гавриила
+Троепольского&#34;</div>
+        <div class="card__badges">
+          <span class="badge">Одежда.</span>
+          <span class="badge badge--muted">20 век.</span>
+        </div>
+      </a>
+      
+      <a class="card" href="/exhibits/4/" style="--card-delay: 210ms;">
+        
+        
+        <div class="card__id">ID 4</div>
+        <div class="card__title">Самолет-Герой.</div>
+        <div class="card__line">Музей под 
+открытым небом
+&#34;Самолет-
+Герой&#34;</div>
+        <div class="card__badges">
+          <span class="badge">Авиостр
+оение.</span>
+          <span class="badge badge--muted">20 век.</span>
+        </div>
+      </a>
+      
+      <a class="card" href="/exhibits/5/" style="--card-delay: 280ms;">
+        
+        
+        <div class="card__id">ID 5</div>
+        <div class="card__title">Биография писателя.</div>
+        <div class="card__line">Музей &#34;Земля
+и небо 
+Вячеслава
+Дегтева&#34;</div>
+        <div class="card__badges">
+          <span class="badge">Биография.</span>
+          <span class="badge badge--muted">20-21 век.</span>
+        </div>
+      </a>
+      
+      <a class="card" href="/exhibits/6/" style="--card-delay: 350ms;">
+        
+        
+        <div class="card__id">ID 6</div>
+        <div class="card__title">&#34;Изучение родного
+края&#34;.</div>
+        <div class="card__line">Музей &#34;Край
+мой Воронежский,
+край мой, 
+родной&#34;</div>
+        <div class="card__badges">
+          <span class="badge">Биография.</span>
+          <span class="badge badge--muted">.</span>
+        </div>
+      </a>
+      
+      <a class="card" href="/exhibits/7/" style="--card-delay: 420ms;">
+        
+        
+        <div class="card__id">ID 7</div>
+        <div class="card__title">&#34;Воронежским
+археологам
+посвящается&#34;.</div>
+        <div class="card__line">&#34;Музей 
+археологии&#34;</div>
+        <div class="card__badges">
+          <span class="badge">Биография.</span>
+          <span class="badge badge--muted">.</span>
+        </div>
+      </a>
+      
+    </div>
+
+    
+  </main>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((regs) => {
+        regs.forEach((reg) => reg.unregister());
+      });
+      caches.keys().then((keys) => {
+        keys.forEach((k) => {
+          if (k.startsWith('museum-exhibits')) {
+            caches.delete(k);
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

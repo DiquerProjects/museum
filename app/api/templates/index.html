@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>Каталог экспонатов</title>
+  <link rel="stylesheet" href="{{ static_prefix|default('/static/') }}style.css?v=11" />
+  <link rel="manifest" href="{{ static_prefix|default('/static/') }}manifest.webmanifest?v=4" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="brand">
+        <div>
+          <div class="brand__title">Каталог экспонатов</div>
+        </div>
+      </div>
+
+      <form class="filters" method="get" action="/">
+        <input class="input" type="search" name="q" placeholder="Поиск (название, музей, описание...)" value="{{ q }}" />
+
+        <button class="button" type="submit">Показать</button>
+      </form>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="meta">Найдено: {{ exhibits | length }}</div>
+
+    <div class="grid">
+      {% for e in exhibits %}
+      <a class="card" href="/exhibits/{{ e.exhibit_id }}/" style="--card-delay: {{ loop.index0 * 70 }}ms;">
+        {% set photo_url = photo_urls.get(e.exhibit_id) %}
+        {% if photo_url %}
+          <div class="card__photo-wrap">
+            <img class="card__photo" src="{{ photo_url }}" alt="{{ e.name }}" loading="lazy" />
+          </div>
+        {% endif %}
+        <div class="card__id">ID {{ e.exhibit_id }}</div>
+        <div class="card__title">{{ e.name }}</div>
+        <div class="card__line">{{ e.museum }}</div>
+        <div class="card__badges">
+          {% if e.category %}<span class="badge">{{ e.category }}</span>{% endif %}
+          {% if e.period %}<span class="badge badge--muted">{{ e.period }}</span>{% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+
+    {% if exhibits | length == 0 %}
+      <div class="empty">Ничего не найдено. Проверь Excel или фильтры.</div>
+    {% endif %}
+  </main>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((regs) => {
+        regs.forEach((reg) => reg.unregister());
+      });
+      caches.keys().then((keys) => {
+        keys.forEach((k) => {
+          if (k.startsWith('museum-exhibits')) {
+            caches.delete(k);
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

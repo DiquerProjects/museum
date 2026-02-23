@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>Не найдено</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="manifest" href="/static/manifest.webmanifest" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__row">
+      <a class="link" href="/">← Назад</a>
+      <div class="brand__title">Экспонат не найден</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="empty">Экспонат с ID {{ exhibit_id }} не найден в XLSX.</div>
+  </main>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/static/sw.js');
+    }
+  </script>
+</body>
+</html>

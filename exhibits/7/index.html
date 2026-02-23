@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>&#34;Воронежским
+археологам
+посвящается&#34;.</title>
+  <link rel="stylesheet" href="../../static/style.css?v=11" />
+  <link rel="manifest" href="../../static/manifest.webmanifest?v=4" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__row">
+      <a class="link" href="../../">← Назад</a>
+      <div class="brand__title">Карточка экспоната</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="detail">
+      <div class="detail__top">
+        <div>
+          <div class="detail__id">ID 7</div>
+          <h1 class="detail__title">&#34;Воронежским
+археологам
+посвящается&#34;.</h1>
+          <div class="detail__museum">&#34;Музей 
+археологии&#34;</div>
+        </div>
+      </div>
+
+      
+        <img class="photo" src="../../photos/7.png" alt="&#34;Воронежским
+археологам
+посвящается&#34;." />
+      
+
+      <div class="detail__grid">
+        <div class="field">
+          <div class="field__label">Категория</div>
+          <div class="field__value">Биография.</div>
+        </div>
+        <div class="field">
+          <div class="field__label">Эпоха/Период</div>
+          <div class="field__value">.</div>
+        </div>
+        <div class="field">
+          <div class="field__label">Дата поступления</div>
+          <div class="field__value">-</div>
+        </div>
+        <div class="field">
+          <div class="field__label">Связь с Воронежем</div>
+          <div class="field__value">Раскопки этих людей раскрыли уникальные памятники древности, дополнив знания о прошлом региона. Исследования археологов прочно связывают Воронеж с важными историческими открытиями, укрепляют научную значимость региона и обогащают его культурное наследие.</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field__label">Описание</div>
+        <div class="field__value field__value--text">Изучение
+археологами территории Воронежской области.</div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((regs) => {
+        regs.forEach((reg) => reg.unregister());
+      });
+      caches.keys().then((keys) => {
+        keys.forEach((k) => {
+          if (k.startsWith('museum-exhibits')) {
+            caches.delete(k);
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>
